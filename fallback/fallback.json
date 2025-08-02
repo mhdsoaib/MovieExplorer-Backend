@@ -1,0 +1,28 @@
+{
+  "discover": {
+    "results": [
+      {
+        "id": 1,
+        "title": "Fallback Movie",
+        "release_date": "2000-01-01",
+        "popularity": 1.0,
+        "vote_average": 5.0
+      }
+    ]
+  },
+  "movie_1": {
+    "id": 1,
+    "overview": "This is a fallback movie detail",
+    "runtime": 100,
+    "genres": [{ "id": 28, "name": "Action" }]
+  },
+  "credits_1": {
+    "cast": [
+      {
+        "id": 10,
+        "name": "Fallback Actor",
+        "character": "Hero"
+      }
+    ]
+  }
+}
