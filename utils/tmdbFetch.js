@@ -10,7 +10,7 @@ const fetchWithFallback = async (apiFn, fallbackPath, retries = 3) => {
       } catch (err) {
         console.warn(`⚠️ Attempt ${attempt} failed`);
         if (attempt === retries) throw err;
-        await new Promise(res => setTimeout(res, 500)); // wait before retry
+        await new Promise(res => setTimeout(res, 500)); 
       }
     }
   } catch (err) {

@@ -5,7 +5,7 @@ const Genre = require('../models/Genre');
 
 router.get('/', async (req, res) => {
   try {
-    const genres = await Genre.find().sort({ name: 1 }); // optional sorting
+    const genres = await Genre.find().sort({ name: 1 }); 
     res.json(genres);
   } catch (err) {
     console.error('Error fetching genres:', err.message);

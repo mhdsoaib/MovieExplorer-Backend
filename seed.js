@@ -6,7 +6,7 @@ dotenv.config();
 const Movie = require('./models/Movie');
 const Genre = require('./models/Genre');
 const Cast = require('./models/Cast');
-const { fetchWithFallback } = require('./utils/tmdbFetch'); // RECOMMENDED location
+const { fetchWithFallback } = require('./utils/tmdbFetch'); 
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connected for seeding...'))

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const MovieSchema = new mongoose.Schema({
-  id: { type: Number, required: true, unique: true }, // TMDB movie ID
+  id: { type: Number, required: true, unique: true }, 
   title: { type: String, required: true },
   overview: String,
   release_date: String,

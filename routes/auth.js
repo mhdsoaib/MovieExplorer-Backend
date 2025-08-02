@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const SECRET_KEY = 'your_secret_key_here'; // use dotenv in real apps
+const SECRET_KEY = 'secret_key'; 
 
 // Register
 router.post('/register', async (req, res) => {

@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
       page = 1,
       limit = 20,
       year,
-      genres,          // comma-separated genre IDs
-      without_genres,  // comma-separated genre IDs to exclude
+      genres,          
+      without_genres,  
       sortBy = 'popularity',
       order = 'desc',
       search
@@ -58,16 +58,13 @@ router.get('/', async (req, res) => {
     // Validate sortBy field
     const sortField = allowedSortFields.includes(sortBy) ? sortBy : 'popularity';
 
-    // Build sort object
     const sortOrder = order.toLowerCase() === 'asc' ? 1 : -1;
     const sortObj = {};
     sortObj[sortField] = sortOrder;
 
-    // Pagination options
     const skip = (page - 1) * limit;
     const limitNum = parseInt(limit);
 
-    // Query with populate for genres
     const movies = await Movie.find(filter)
       .populate('genres')
       .sort(sortObj)
@@ -96,7 +93,7 @@ router.get('/:id', async (req, res) => {
 
     const movie = await Movie.findById(id)
       .populate('genres')
-      .lean(); // optional: lean() returns plain JS object
+      .lean(); 
 
     if (!movie) {
       return res.status(404).json({ error: 'Movie not found' });
@@ -112,10 +109,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Example: protect this route
-router.post('/add', authenticateToken, async (req, res) => {
-  // only logged-in users can access
-});
+router.post('/add', authenticateToken, async (req, res) => {});
 
 
 module.exports = router;
